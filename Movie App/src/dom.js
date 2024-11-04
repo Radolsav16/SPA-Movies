@@ -45,3 +45,11 @@ export function createFilmPreview(obj){
 
 
 }
+
+export function loginView(){
+
+}
+
+export function registerView(){
+    
+}

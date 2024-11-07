@@ -1,9 +1,14 @@
+import { navigationBar } from "./navigationbar.js";
+
+
 export function userRegister() {
   const homePage = document.querySelector("#home-page");
   homePage.style.display = "none";
 
   const signedUpSection = document.querySelector("#form-sign-up");
   signedUpSection.style.display = "block";
+
+  navigationBar();
 
   const form = signedUpSection.querySelector("form");
 

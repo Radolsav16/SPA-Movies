@@ -1,13 +1,17 @@
 import { createFilmPreview } from "./dom.js";
 
 
+
 async function getMovies(){
     const url = 'http://localhost:3030/jsonstore/collections/data/movies';
+ 
     const res = await fetch(url);
     const data = await res.json();
 
     const ul = document.querySelector('#movies-list');
     ul.innerHTML = '';
+
+  
     
     Object.values(data)
         .forEach((film)=>{
@@ -29,6 +33,9 @@ async function addMovies(e) {
         }
     }
 
+    
+    
+
     const url = 'http://localhost:3030/jsonstore/collections/data/movies';
     const res = await fetch(url,{
         method:"POST",
@@ -43,13 +50,16 @@ async function addMovies(e) {
 
     form.reset();
 
+
     const sectionAddMovie = form.parentElement;
     sectionAddMovie.style.display = 'none';
 
     const sectionHomePage = document.querySelector("#home-page");
     sectionHomePage.style.display = 'block';
 
-    getMovies();
+
+    location.href = '/';
+
     
     
   
